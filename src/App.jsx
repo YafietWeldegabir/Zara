@@ -506,11 +506,12 @@ function HomePage({ setPage }) {
         </div>
         <div>
           <div className="zr-hours-item-label">Location</div>
-          <div className="zr-hours-item-value">Downtown Dallas</div>
+          <div className="zr-hours-item-value">9780 Lyndon B Johnson Fwy suite 106
+TX 75243</div>
         </div>
         <div>
           <div className="zr-hours-item-label">Reservations</div>
-          <div className="zr-hours-item-value">(214) 555-0142</div>
+          <div className="zr-hours-item-value">Coming Soon</div>
         </div>
       </div>
 
