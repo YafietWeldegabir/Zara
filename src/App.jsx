@@ -423,7 +423,7 @@ const CATEGORIES = [
     title: "To Drink",
     sub: "Curated by our sommelier",
     items: [
-      { name: "Reds by the Glass", price: "16–24", desc: "Rotating selection, ask your server for tonight's pours" }
+      { name: "Coming Soon", price: "00", desc: "Coming soon" }
     ],
   },
 ];
