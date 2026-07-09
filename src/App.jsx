@@ -502,7 +502,7 @@ function HomePage({ setPage }) {
       <div className="zr-hours-strip">
         <div>
           <div className="zr-hours-item-label">Hours</div>
-          <div className="zr-hours-item-value">Monday – Sun, 9:00 – 9:00pm</div>
+          <div className="zr-hours-item-value">Monday – Sun, 8:00am – 9:00pm</div>
         </div>
         <div>
           <div className="zr-hours-item-label">Location</div>
