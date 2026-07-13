@@ -332,6 +332,19 @@ const STYLES = `
   grid-template-columns: 1fr 1fr;
   gap: 56px;
 }
+.zr-map-embed {
+  margin: -8px 0 24px;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+.zr-map-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 240px;
+  border: 0;
+}
 .zr-contact-item {
   display: flex;
   gap: 16px;
@@ -598,6 +611,14 @@ function ContactPage() {
               <div className="zr-contact-label">Address</div>
               <div className="zr-contact-value">9780 Lyndon B Johnson Fwy suite 106<br />TX 75243</div>
             </div>
+          </div>
+          <div className="zr-map-embed">
+            <iframe
+              title="Zara location"
+              src="https://www.google.com/maps?q=9780%20Lyndon%20B%20Johnson%20Fwy%20suite%20106%20TX%2075243&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
           <div className="zr-contact-item">
             <Phone className="zr-contact-icon" size={20} />
