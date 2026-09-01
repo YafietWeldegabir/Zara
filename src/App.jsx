@@ -650,9 +650,10 @@ function ContactPage() {
           <div className="zr-map-embed">
             <iframe
               title="Zara location"
-              src="https://www.google.com/maps?q=9780%20Lyndon%20B%20Johnson%20Fwy%20suite%20106%20TX%2075243&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.9120068819293!2d-96.72222672345505!3d32.900494673612336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1fd859867f23%3A0x6fc29dd744a774b3!2s9780%20Lyndon%20B%20Johnson%20Fwy%20%23106%2C%20Dallas%2C%20TX%2075243!5e0!3m2!1sen!2sus!4v1788273455582!5m2!1sen!2sus"
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
           <div className="zr-contact-item">
