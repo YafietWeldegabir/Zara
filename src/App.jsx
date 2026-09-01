@@ -1,36 +1,36 @@
 import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Menu as MenuIcon, X } from "lucide-react";
-import logoFullcolor from "./assets/logo/zara-logo-fullcolor.png";
+import logoMonoDark from "./assets/logo/zara-logo-mono-dark.png";
 
 const STYLES = `
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=Archivo:wght@300;400;500;600&display=swap');
 
 .zara-root {
-  --bg: #f7ecd9;
-  --surface: #faf3e6;
-  --surface-2: #f0e0c4;
-  --gold: #c1633b;
-  --gold-light: #8f3f22;
+  --bg: #faf9f6;
+  --surface: #f3f2ee;
+  --surface-2: #ece9e2;
+  --gold: #5a7a5a;
+  --gold-light: #3f5a3f;
   --wine: #8a3a2c;
-  --ivory: #3b2a1e;
-  --muted: #7a6753;
-  --hairline: rgba(59,42,30,0.16);
+  --ivory: #242220;
+  --muted: #8a8680;
+  --hairline: rgba(36,34,32,0.12);
   background: var(--bg);
   color: var(--ivory);
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-weight: 300;
   min-height: 100vh;
   position: relative;
 }
 
-.zr-serif { font-family: 'Bodoni Moda', serif; }
+.zr-serif { font-family: 'Newsreader', serif; }
 
 /* NAV */
 .zr-nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(247,236,217,0.92);
+  background: rgba(250,249,246,0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--hairline);
 }
@@ -57,14 +57,14 @@ const STYLES = `
   line-height: 1.1;
 }
 .zr-brand-name {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 26px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 17px;
   letter-spacing: 3px;
   color: var(--ivory);
   font-weight: 500;
 }
 .zr-brand-sub {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -80,7 +80,7 @@ const STYLES = `
   background: none;
   border: none;
   color: var(--muted);
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -135,7 +135,7 @@ const STYLES = `
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center top, rgba(193,99,59,0.12), transparent 60%);
+  background: radial-gradient(ellipse at center top, rgba(95,122,95,0.08), transparent 60%);
   pointer-events: none;
 }
 .zr-hero-eyebrow {
@@ -146,16 +146,17 @@ const STYLES = `
   margin: 28px 0 18px;
 }
 .zr-hero-title {
-  font-family: 'Bodoni Moda', serif;
-  font-weight: 500;
-  font-size: clamp(52px, 9vw, 92px);
-  letter-spacing: 6px;
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(48px, 8vw, 84px);
+  letter-spacing: 0;
   line-height: 1.05;
   margin: 0 0 22px;
   color: var(--ivory);
 }
 .zr-hero-tagline {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Newsreader', serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(18px, 2.4vw, 24px);
@@ -177,7 +178,7 @@ const STYLES = `
   flex-wrap: wrap;
 }
 .zr-btn {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -214,12 +215,13 @@ const STYLES = `
   margin-bottom: 14px;
 }
 .zr-section-title {
-  font-family: 'Bodoni Moda', serif;
-  font-weight: 500;
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-weight: 400;
   font-size: clamp(30px, 4vw, 42px);
   text-align: center;
   margin: 0 0 28px;
-  letter-spacing: 1px;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 .zr-philosophy-text {
@@ -251,8 +253,9 @@ const STYLES = `
   margin-bottom: 8px;
 }
 .zr-hours-item-value {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 20px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   color: var(--ivory);
 }
 
@@ -260,8 +263,9 @@ const STYLES = `
 .zr-menu-page { padding-top: 20px; }
 .zr-menu-category { margin-bottom: 56px; }
 .zr-menu-category-title {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 28px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--gold-light);
@@ -282,8 +286,8 @@ const STYLES = `
   gap: 10px;
 }
 .zr-menu-item-name {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 21px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
   font-weight: 500;
   color: var(--ivory);
   white-space: nowrap;
@@ -294,8 +298,9 @@ const STYLES = `
   transform: translateY(-4px);
 }
 .zr-menu-item-price {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 20px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
   color: var(--gold-light);
   white-space: nowrap;
 }
@@ -316,7 +321,7 @@ const STYLES = `
 }
 .zr-about-image {
   aspect-ratio: 4/5;
-  background: linear-gradient(135deg, var(--surface-2), var(--surface), #e8d2ac);
+  background: linear-gradient(135deg, var(--surface-2), var(--surface), #e0ded6);
   border: 1px solid var(--hairline);
   border-radius: 2px;
   position: relative;
@@ -336,7 +341,7 @@ const STYLES = `
   font-weight: 300;
 }
 .zr-about-signature {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Newsreader', serif;
   font-style: italic;
   color: var(--gold-light);
   font-size: 18px;
@@ -381,8 +386,9 @@ const STYLES = `
   margin-bottom: 4px;
 }
 .zr-contact-value {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 19px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   color: var(--ivory);
   line-height: 1.5;
 }
@@ -472,7 +478,7 @@ function Crest({ size = 56 }) {
   return (
     <img
       className="zr-logo"
-      src={logoFullcolor}
+      src={logoMonoDark}
       alt="Zara Cafe & Restaurant"
       style={{ height: size }}
     />
