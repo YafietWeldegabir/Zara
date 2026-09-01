@@ -1,35 +1,36 @@
 import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Menu as MenuIcon, X } from "lucide-react";
+import logoFullcolor from "./assets/logo/zara-logo-fullcolor.png";
 
 const STYLES = `
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap');
 
 .zara-root {
-  --bg: #14110f;
-  --surface: #1e1a16;
-  --surface-2: #262019;
-  --gold: #b08d57;
-  --gold-light: #d9bc8a;
-  --wine: #6b2737;
-  --ivory: #f1e9dc;
-  --muted: #9c8f80;
-  --hairline: rgba(176,141,87,0.28);
+  --bg: #f7ecd9;
+  --surface: #faf3e6;
+  --surface-2: #f0e0c4;
+  --gold: #c1633b;
+  --gold-light: #8f3f22;
+  --wine: #8a3a2c;
+  --ivory: #3b2a1e;
+  --muted: #7a6753;
+  --hairline: rgba(59,42,30,0.16);
   background: var(--bg);
   color: var(--ivory);
-  font-family: 'Jost', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-weight: 300;
   min-height: 100vh;
   position: relative;
 }
 
-.zr-serif { font-family: 'Cormorant Garamond', serif; }
+.zr-serif { font-family: 'Bodoni Moda', serif; }
 
 /* NAV */
 .zr-nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(20,17,15,0.92);
+  background: rgba(247,236,217,0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--hairline);
 }
@@ -49,12 +50,26 @@ const STYLES = `
   background: none;
   border: none;
 }
+.zr-brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+}
 .zr-brand-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 26px;
   letter-spacing: 3px;
   color: var(--ivory);
   font-weight: 500;
+}
+.zr-brand-sub {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-top: 2px;
 }
 .zr-links {
   display: flex;
@@ -65,7 +80,7 @@ const STYLES = `
   background: none;
   border: none;
   color: var(--muted);
-  font-family: 'Jost', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -106,8 +121,8 @@ const STYLES = `
 }
 .zr-mobile-menu button.active { color: var(--gold-light); }
 
-/* CREST */
-.zr-crest { display:block; margin: 0 auto; }
+/* LOGO */
+.zr-logo { display: block; margin: 0 auto; width: auto; object-fit: contain; }
 
 /* HERO */
 .zr-hero {
@@ -120,7 +135,7 @@ const STYLES = `
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center top, rgba(176,141,87,0.10), transparent 60%);
+  background: radial-gradient(ellipse at center top, rgba(193,99,59,0.12), transparent 60%);
   pointer-events: none;
 }
 .zr-hero-eyebrow {
@@ -131,15 +146,16 @@ const STYLES = `
   margin: 28px 0 18px;
 }
 .zr-hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-weight: 500;
   font-size: clamp(52px, 9vw, 92px);
   letter-spacing: 6px;
   line-height: 1.05;
   margin: 0 0 22px;
+  color: var(--ivory);
 }
 .zr-hero-tagline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(18px, 2.4vw, 24px);
@@ -161,7 +177,7 @@ const STYLES = `
   flex-wrap: wrap;
 }
 .zr-btn {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -198,12 +214,13 @@ const STYLES = `
   margin-bottom: 14px;
 }
 .zr-section-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-weight: 500;
   font-size: clamp(30px, 4vw, 42px);
   text-align: center;
   margin: 0 0 28px;
   letter-spacing: 1px;
+  color: var(--ivory);
 }
 .zr-philosophy-text {
   max-width: 640px;
@@ -234,7 +251,7 @@ const STYLES = `
   margin-bottom: 8px;
 }
 .zr-hours-item-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 20px;
   color: var(--ivory);
 }
@@ -243,7 +260,7 @@ const STYLES = `
 .zr-menu-page { padding-top: 20px; }
 .zr-menu-category { margin-bottom: 56px; }
 .zr-menu-category-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 28px;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -265,7 +282,7 @@ const STYLES = `
   gap: 10px;
 }
 .zr-menu-item-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 21px;
   font-weight: 500;
   color: var(--ivory);
@@ -277,7 +294,7 @@ const STYLES = `
   transform: translateY(-4px);
 }
 .zr-menu-item-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 20px;
   color: var(--gold-light);
   white-space: nowrap;
@@ -299,7 +316,7 @@ const STYLES = `
 }
 .zr-about-image {
   aspect-ratio: 4/5;
-  background: linear-gradient(135deg, var(--surface-2), var(--surface), #100d0b);
+  background: linear-gradient(135deg, var(--surface-2), var(--surface), #e8d2ac);
   border: 1px solid var(--hairline);
   border-radius: 2px;
   position: relative;
@@ -319,7 +336,7 @@ const STYLES = `
   font-weight: 300;
 }
 .zr-about-signature {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   color: var(--gold-light);
   font-size: 18px;
@@ -364,7 +381,7 @@ const STYLES = `
   margin-bottom: 4px;
 }
 .zr-contact-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 19px;
   color: var(--ivory);
   line-height: 1.5;
@@ -443,13 +460,12 @@ const CATEGORIES = [
 
 function Crest({ size = 56 }) {
   return (
-    <svg className="zr-crest" width={size} height={size} viewBox="0 0 100 100" fill="none">
-      <circle cx="50" cy="50" r="46" stroke="#b08d57" strokeWidth="1" />
-      <circle cx="50" cy="50" r="38" stroke="#b08d57" strokeWidth="0.6" opacity="0.6" />
-      <text x="50" y="63" textAnchor="middle" fontFamily="Cormorant Garamond, serif" fontSize="42" fill="#d9bc8a">Z</text>
-      <path d="M28 30 Q20 50 28 70" stroke="#b08d57" strokeWidth="0.7" opacity="0.5" fill="none" />
-      <path d="M72 30 Q80 50 72 70" stroke="#b08d57" strokeWidth="0.7" opacity="0.5" fill="none" />
-    </svg>
+    <img
+      className="zr-logo"
+      src={logoFullcolor}
+      alt="Zara Cafe & Restaurant"
+      style={{ height: size }}
+    />
   );
 }
 
@@ -468,8 +484,11 @@ function NavBar({ page, setPage }) {
     <nav className="zr-nav">
       <div className="zr-nav-inner">
         <button className="zr-brand" onClick={() => go("home")}>
-          <Crest size={34} />
-          <span className="zr-brand-name">ZARA</span>
+          <Crest size={52} />
+          <span className="zr-brand-text">
+            <span className="zr-brand-name">ZARA</span>
+            <span className="zr-brand-sub">Cafe &amp; Restaurant</span>
+          </span>
         </button>
         <ul className="zr-links">
           {pages.map((p) => (
@@ -499,7 +518,7 @@ function HomePage({ setPage }) {
   return (
     <>
       <section className="zr-hero">
-        <Crest size={64} />
+        <Crest size={120} />
         <div className="zr-hero-eyebrow">Est. Dallas</div>
         <h1 className="zr-hero-title">ZARA</h1>
         <p className="zr-hero-tagline">
@@ -647,7 +666,7 @@ function ContactPage() {
           </div>
         </div>
         <div className="zr-map">
-          <Crest size={72} />
+          <Crest size={160} />
         </div>
       </div>
     </section>
